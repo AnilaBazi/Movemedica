@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="createViewModel"
+            type="it.treeo.movemedical.createAppointments.CreateAppointmentViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        tools:context=".createAppointments.CreateAppointments">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:id="@+id/ic_calendar"
+            android:background="@drawable/rectangle"
+            android:text="@={createViewModel.chooseDate}"
+            android:padding="10dp"
+            android:layout_margin="20dp"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/btn_color"
+            app:drawableRightCompat="@drawable/ic_calendar" />
+
+        <Spinner
+            android:id="@+id/locationList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ic_calendar"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_margin="16dp"
+           />
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/etDescription"
+    android:hint="@string/details"
+    android:text="@={createViewModel.description}"
+    android:layout_below="@+id/locationList"
+    android:lines="4"
+    android:padding="10dp"
+    android:background="@drawable/rectangle"
+    android:layout_margin="20dp"
+    />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:shadowRadius="3"
+            app:cornerRadius="40dp"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            android:padding="15dp"
+            android:gravity="center"
+            android:text="@string/txt_Create"
+            android:textSize="14dp"
+            app:strokeColor="@color/btn_color"
+            app:backgroundTint="@color/btn_color"
+            app:elevation="20dp"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+</layout>
