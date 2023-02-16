@@ -27,12 +27,9 @@ class ListAppointmentActivity : AppCompatActivity() ,DataListener{
 
         binding.listData.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-
-
           viewModel.getListData().observe(this,{
             listData= it
-              adapterData= this?.let { DataAdapter(viewModel._dataList, this,this) }
+              adapterData= this.let { DataAdapter(viewModel._dataList, this,this) }
               binding.listData.adapter = adapterData
 
           })

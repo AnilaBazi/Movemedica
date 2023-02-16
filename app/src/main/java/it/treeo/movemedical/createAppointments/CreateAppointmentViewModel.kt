@@ -44,7 +44,7 @@ class CreateAppointmentViewModel  @Inject constructor(): ViewModel() {
             var month=date!!.month+1
 
             val dateChoose = addZero(month) + "/" +
-                    addZero(date!!.dayOfMonth)+ "/" + date!!.year.toString()
+                    addZero(date.dayOfMonth)+ "/" + date.year.toString()
 
             val timeChoose = addZero(time!!.hour) + ":"+ addZero(time.minute)
 
@@ -72,7 +72,7 @@ class CreateAppointmentViewModel  @Inject constructor(): ViewModel() {
            month=localDateTime.monthValue.toInt() -1
         }
 
-        datePicker!!.init(localDateTime.year, month, localDateTime.dayOfMonth, null);
+        datePicker.init(localDateTime.year, month, localDateTime.dayOfMonth, null)
         timePicker.currentHour = localDateTime.hour
         timePicker.currentMinute = localDateTime.minute
     }
